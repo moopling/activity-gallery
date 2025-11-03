@@ -66,9 +66,9 @@
   <div id="gallery" style="display:none;"></div>
 
   <script>
-    const API_URL = "https://script.google.com/macros/s/AKfycbyp-LEZWztRXb59jSwe9hhSo6LK-cpW8yezIkKXx2n7thvTHz4Nqbre4UKcHL_r0JoPFA/exec";
+    // 🔗 ลิงก์จริงจาก Apps Script ของคุณ
+    const API_URL = "https://script.google.com/macros/s/AKfycby4EibyZARqcfYAscjpsjgDRqT1G74Q5FdbN14dTsMNeylxPLpXDrZVdFUTzY_kIjx6fQ/exec";
 
-    // โหลดรายการกิจกรรม
     async function loadActivities() {
       const res = await fetch(`${API_URL}?action=listActivities`);
       const data = await res.json();
@@ -90,7 +90,6 @@
       container.appendChild(grid);
     }
 
-    // โหลดรูปกิจกรรม
     async function loadImages(activityId, title) {
       const res = await fetch(`${API_URL}?action=getImages&activityId=${activityId}`);
       const images = await res.json();
@@ -119,13 +118,11 @@
       gallery.appendChild(grid);
     }
 
-    // ปุ่มกลับ
     function goBack() {
       document.getElementById('gallery').style.display = 'none';
       document.getElementById('content').style.display = 'block';
     }
 
-    // เริ่มต้นโหลดกิจกรรม
     loadActivities();
   </script>
 </body>
